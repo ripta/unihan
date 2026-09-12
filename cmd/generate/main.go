@@ -18,7 +18,7 @@ func main() {
 }
 
 func run(args []string) error {
-	source := "tmp/Unihan_16.0.0.zip"
+	source := "tmp/Unihan_17.0.0.zip"
 	if len(args) > 0 {
 		source = args[0]
 	}
