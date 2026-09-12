@@ -39,7 +39,7 @@ func ReadVersion(version string) (*zip.Reader, error) {
 		return nil, fmt.Errorf("reading unihan database version %s (%s): %w", version, URL(version), err)
 	}
 
-	return zip.NewReader(bytes.NewReader(bs), resp.ContentLength)
+	return zip.NewReader(bytes.NewReader(bs), int64(len(bs)))
 }
 
 func getFile(r *zip.Reader, filename string) (io.ReadCloser, error) {
