@@ -7,17 +7,12 @@ import (
 	"io"
 	"net/http"
 	"time"
-	"unicode"
 )
 
 var unihanURLPattern = "https://unicode.org/Public/%s/ucd/Unihan.zip"
 
 var unihanClient = &http.Client{
 	Timeout: 5 * time.Minute,
-}
-
-func CurrentVersion() string {
-	return unicode.Version
 }
 
 func LatestVersion() string {
